@@ -8,6 +8,7 @@
             version = "2.9.3";
     };
   };
+  };
   variable = {
     proxmox_api_url = {
       type = "string";
