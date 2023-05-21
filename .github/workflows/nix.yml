@@ -1,5 +1,5 @@
  #Our desired pipeline using only a Nix shell environment
-name: Build and Deploy to Storj
+name: Build and plan terraform
 
 on: workflow_dispatch
 
@@ -20,4 +20,4 @@ jobs:
 
       # Nix-specific logic begins here
       - name: Test the nix setup
-        run: nix build 
+        run: nix run
