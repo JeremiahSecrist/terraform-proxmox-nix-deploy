@@ -15,7 +15,10 @@
         terraform = pkgs.terraform_0_15;
         terraformConfiguration = terranix.lib.terranixConfiguration {
           inherit system;
-          modules = [ ./config.nix ];
+          modules = [ 
+            ./provider.nix 
+            
+            ];
         };
       in
       {
