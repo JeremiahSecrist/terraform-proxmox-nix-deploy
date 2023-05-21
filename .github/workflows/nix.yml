@@ -10,7 +10,12 @@ jobs:
     steps:
       - name: git checkout
         uses: actions/checkout@v3
-            
+
+      - name: Tailscale
+        uses: tailscale/github-action@v1
+        with:
+          authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
+
       - name: Install Nix
         uses: DeterminateSystems/nix-installer-action@main
         with:
@@ -21,3 +26,7 @@ jobs:
       # Nix-specific logic begins here
       - name: Test the nix setup
         run: nix run
+        env:
+          TF_VARS_proxmox_api_token_id: ${{ secrets.PROXMOX_API_TOKEN_ID }}
+          TF_VARS_proxmox_api_secret: ${{ secrets.PROXMOX_API_SECRET }}
+          TF_VARS_proxmox_url: ${{ secrets.PROXMOX_URL }}
