@@ -12,7 +12,7 @@
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
-        terraform = pkgs.terraform_0_15;
+        terraform = pkgs.terraform;
         terraformConfiguration = terranix.lib.terranixConfiguration {
           inherit system;
           modules = [ 
