@@ -26,7 +26,7 @@
         # nix develop
         devShell = pkgs.mkShell {
           buildInputs = [
-            pkgs.terraform_0_15
+            pkgs.terraform
             terranix.defaultPackage.${system}
           ];
         };
