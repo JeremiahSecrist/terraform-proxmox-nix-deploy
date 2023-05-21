@@ -53,10 +53,10 @@
         apps.plan = {
           type = "app";
           program = toString (pkgs.writers.writeBash "plan" ''
-            if [[ -e config.tf.json ]]; then rm -f config.tf.json; fi
-            cp ${terraformConfiguration} config.tf.json \
-              && ${terraform}/bin/terraform init \
-              && ${terraform}/bin/terraform plan
+            # if [[ -e config.tf.json ]]; then rm -f config.tf.json; fi
+            cp ${terraformConfiguration} config.tf.json && \
+                ${terraform}/bin/terraform init && \ 
+                ${terraform}/bin/terraform plan
           '');
         };
         # nix run
