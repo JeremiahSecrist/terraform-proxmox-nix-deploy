@@ -25,7 +25,7 @@ jobs:
 
       # Nix-specific logic begins here
       - name: Test the nix setup
-        run: nix develop && terraform init && terraform plan
+        run: nix run
         env:
           TF_VAR_proxmox_api_token_id: ${{ secrets.PROXMOX_API_TOKEN_ID }}
           TF_VAR_proxmox_api_secret: ${{ secrets.PROXMOX_API_SECRET }}
