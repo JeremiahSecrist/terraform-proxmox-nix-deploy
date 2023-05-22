@@ -21,7 +21,7 @@
       type = "string";
       description = "This is the token id";
     };
-    proxmox_api_secret = {
+    proxmox_api_token_secret = {
       type = "string";
       description = "This is the location of proxmox";
     };

@@ -16,8 +16,9 @@
         terraformConfiguration = terranix.lib.terranixConfiguration {
           inherit system;
           modules = [ 
-            ./backend.nix
-            ./provider.nix 
+            #./backend.nix
+            ./provider.nix
+            ./singleserver.nix 
             ];
         };
       in
@@ -33,12 +34,7 @@
         # nix run ".#apply"
         apps.apply = {
           type = "app";
-          program = toString (pkgs.writers.writeBash "apply" ''
-            if [[ -e config.tf.json ]]; then rm -f config.tf.json; fi
-            cp ${terraformConfiguration} config.tf.json \
-              && ${terraform}/bin/terraform init \
-              && ${terraform}/bin/terraform apply
-          '');
+          program = toString (pkgs.writers.writeBash "apply" "if [[ -e config.tf.json ]]; then rm -f config.tf.json; fi; cp ${terraformConfiguration} config.tf.json && ${terraform}/bin/terraform init && ${terraform}/bin/terraform apply -var-file=localonly.tfvars");
         };
         # nix run ".#destroy"
         apps.destroy = {
@@ -52,7 +48,7 @@
         };
         apps.plan = {
           type = "app";
-          program = toString (pkgs.writers.writeBash "plan" "cp ${terraformConfiguration} config.tf.json && ${terraform}/bin/terraform init && ${terraform}/bin/terraform plan");
+          program = toString (pkgs.writers.writeBash "plan" "if [[ -e config.tf.json ]]; then rm -f config.tf.json; fi; cp ${terraformConfiguration} config.tf.json && ${terraform}/bin/terraform init && ${terraform}/bin/terraform plan -var-file=localonly.tfvars");
         };
         # nix run
         defaultApp = self.apps.${system}.plan;
