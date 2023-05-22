@@ -52,10 +52,7 @@
         };
         apps.plan = {
           type = "app";
-          program = toString (pkgs.writers.writeBash "plan" ''
-            cp ${terraformConfiguration} config.tf.json
-            ${terraform}/bin/terraform init --reconfigure
-            ${terraform}/bin/terraform plan'');
+          program = toString (pkgs.writers.writeBash "plan" "cp ${terraformConfiguration} config.tf.json && ${terraform}/bin/terraform init && ${terraform}/bin/terraform plan");
         };
         # nix run
         defaultApp = self.apps.${system}.plan;
