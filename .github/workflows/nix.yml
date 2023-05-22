@@ -30,3 +30,4 @@ jobs:
           TF_VAR_proxmox_api_token_id: ${{ secrets.PROXMOX_API_TOKEN_ID }}
           TF_VAR_proxmox_api_secret: ${{ secrets.PROXMOX_API_SECRET }}
           TF_VAR_proxmox_api_url: ${{ secrets.PROXMOX_URL }}
+          AWS_S3_ENDPOINT: ${{secrets.AWS_S3_ENDPOINT}}
