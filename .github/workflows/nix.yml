@@ -27,6 +27,6 @@ jobs:
       - name: Test the nix setup
         run: nix develop && terraform init && terraform plan
         env:
-          TF_VARS_proxmox_api_token_id: ${{ secrets.PROXMOX_API_TOKEN_ID }}
-          TF_VARS_proxmox_api_secret: ${{ secrets.PROXMOX_API_SECRET }}
-          TF_VARS_proxmox_url: ${{ secrets.PROXMOX_URL }}
+          TF_VAR_proxmox_api_token_id: ${{ secrets.PROXMOX_API_TOKEN_ID }}
+          TF_VAR_proxmox_api_secret: ${{ secrets.PROXMOX_API_SECRET }}
+          TF_VAR_proxmox_url: ${{ secrets.PROXMOX_URL }}
