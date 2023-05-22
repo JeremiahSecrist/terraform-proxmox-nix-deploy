@@ -54,7 +54,7 @@
           type = "app";
           program = toString (pkgs.writers.writeBash "plan" ''
             cp ${terraformConfiguration} config.tf.json
-            ${terraform}/bin/terraform init -reconfigure
+            ${terraform}/bin/terraform init --reconfigure
             ${terraform}/bin/terraform plan'');
         };
         # nix run
