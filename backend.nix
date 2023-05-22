@@ -7,7 +7,7 @@
     };
     backend_s3_bucket = {
       type = "string";
-      description = "This is the bucket for storage of state"
+      description = "This is the bucket for storage of state";
     };
     backend_s3_key = {
       type = "string";
