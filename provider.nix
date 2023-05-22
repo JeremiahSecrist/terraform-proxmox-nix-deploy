@@ -1,13 +1,13 @@
 { ... }:
 {
   terraform = {
-     required_version = ">= 0.13.0";
+    required_version = ">= 0.13.0";
     required_providers = {
-        proxmox = {
-            source = "telmate/proxmox";
-            version = "2.9.3";
+      proxmox = {
+        source = "telmate/proxmox";
+        version = "2.9.3";
+      };
     };
-  };
   };
   variable = {
     proxmox_api_url = {
