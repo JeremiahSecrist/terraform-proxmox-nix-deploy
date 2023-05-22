@@ -7,6 +7,9 @@
         source = "telmate/proxmox";
         version = "2.9.3";
       };
+      aws = {
+       source = "hashicorp/aws";
+      };
     };
   };
   variable = {

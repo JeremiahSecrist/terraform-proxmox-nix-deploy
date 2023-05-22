@@ -16,7 +16,7 @@
   };
   backend = {
     s3 = {
-      region = "\${ var.backend_s3_region }";
+      region = "US1"; #"\${ var.backend_s3_region }";
       bucket = "\${ var.backend_s3_bucket }";
       key = "\${ var.backend_s3_key }";
     };
