@@ -31,7 +31,7 @@ jobs:
           TF_VAR_proxmox_api_secret: ${{ secrets.PROXMOX_API_SECRET }}
           TF_VAR_proxmox_api_url: ${{ secrets.PROXMOX_URL }}
           
-          AWS_S3_ENDPOINT: ${{secrets.AWS_S3_ENDPOINT}}
+          AWS_S3_ENDPOINT: ${{ secrets.AWS_S3_ENDPOINT}}
           TF_VAR_backend_s3_region: ${{ secrets.BACKEND_S3_REGION }}
           TF_VAR_backend_s3_bucket: ${{ secrets.BACKEND_S3_BUCKET }}
           TF_VAR_backend_s3_key: ${{ secrets.BACKEND_S3_KEY }}
