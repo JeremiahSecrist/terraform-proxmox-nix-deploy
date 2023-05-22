@@ -16,8 +16,8 @@
         terraformConfiguration = terranix.lib.terranixConfiguration {
           inherit system;
           modules = [ 
+            ./backend.nix
             ./provider.nix 
-            
             ];
         };
       in
