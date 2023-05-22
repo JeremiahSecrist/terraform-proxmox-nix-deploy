@@ -25,7 +25,7 @@ jobs:
 
       # Nix-specific logic begins here
       - name: Test the nix setup
-        run: nix run --keep TF_VARS_proxmox_api_token_id
+        run: nix run --impure
         env:
           TF_VARS_proxmox_api_token_id: ${{ secrets.PROXMOX_API_TOKEN_ID }}
           TF_VARS_proxmox_api_secret: ${{ secrets.PROXMOX_API_SECRET }}
