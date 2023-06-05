@@ -1,24 +1,14 @@
 { ... }:
 {
   variable = {
-    backend_s3_region = {
+    backend_pg_url = {
       type = "string";
-      description = "region";
-    };
-    backend_s3_bucket = {
-      type = "string";
-      description = "This is the bucket for storage of state";
-    };
-    backend_s3_key = {
-      type = "string";
-      description = "the key used for bucket";
+      description = "full path with credentials to pg server";
     };
   };
-  backend = {
-    s3 = {
-      region = "us-east-2"; #"\${ var.backend_s3_region }";
-      bucket = "\${ var.backend_s3_bucket }";
-      key = "\${ var.backend_s3_key }";
+    terraform = {
+      backend."pg" = {
+        conn_str = "\${ var.backend_pg_url }";
+      };
     };
-  };
 }
