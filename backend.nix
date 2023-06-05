@@ -6,9 +6,10 @@
       description = "full path with credentials to pg server";
     };
   };
-    terraform = {
-      backend."pg" = {
-        conn_str = "\${ var.backend_pg_url }";
-      };
+
+  terraform = {
+    backend.pg = {
+      conn_str = "\${ var.backend_pg_url }";
     };
+  };
 }
