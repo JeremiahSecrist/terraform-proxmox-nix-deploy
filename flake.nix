@@ -51,16 +51,16 @@
           };
           validate = {
             type = "app";
-            program = toString (pkgs.writers.writeBash "validate" "nix run .\#init; ${terraform}/bin/terraform validate");
+            program = toString (pkgs.writers.writeBash "validate" "nix run .\#init && ${terraform}/bin/terraform validate");
           };
           plan = {
             type = "app";
-            program = toString (pkgs.writers.writeBash "plan" "nix run .\#init; ${terraform}/bin/terraform plan"); 
+            program = toString (pkgs.writers.writeBash "plan" "nix run .\#init && ${terraform}/bin/terraform plan"); 
           };
           apply = {
             type = "app";
             # TODO find less hacky way to run init portion
-            program = toString (pkgs.writers.writeBash "apply" "nix run .\#init; ${terraform}/bin/terraform apply");
+            program = toString (pkgs.writers.writeBash "apply" "nix run .\#init && ${terraform}/bin/terraform apply");
           };
           # nix run ".#destroy"
           destroy = {
