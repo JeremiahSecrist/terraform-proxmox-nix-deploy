@@ -24,7 +24,7 @@ jobs:
             access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
       
       - name: Prepare secrets
-        run: echo $AGE_SECRET_KEY_FILE > $HOME/.passage/identities; nix run .\#deploy-secrets 
+        run: mkdir -p $HOME/.passage; echo $AGE_SECRET_KEY_FILE > $HOME/.passage/identities; nix run .\#deploy-secrets 
       
       # Nix-specific logic begins here
       - name: Test the nix setup
