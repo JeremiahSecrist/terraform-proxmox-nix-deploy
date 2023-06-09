@@ -24,7 +24,7 @@ jobs:
             access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
       
       - name: Prepare secrets
-        run: mkdir -p $HOME/.passage; echo $AGE_SECRET_KEY_FILE > $HOME/.passage/identities; nix run .\#export-secrets
+        run: mkdir -p $HOME/.passage && echo "$AGE_SECRET_KEY_FILE" > $HOME/.passage/identities && nix run .\#export-secrets
         env:
           AGE_SECRET_KEY_FILE: ${{ secrets.AGE_SECRET_KEY_FILE }}
       
