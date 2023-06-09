@@ -22,9 +22,9 @@
         terraformConfiguration = terranix.lib.terranixConfiguration {
           inherit system;
           modules = [ 
-            ./backend.nix
-            ./provider.nix
-            ./singleserver.nix 
+            ./backend/postgres.nix
+            ./provider/proxmox.nix
+            ./production
             ];
         };
       in
