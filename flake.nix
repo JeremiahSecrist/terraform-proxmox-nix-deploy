@@ -60,7 +60,7 @@
           apply = {
             type = "app";
             # TODO find less hacky way to run init portion
-            program = toString (pkgs.writers.writeBash "apply" "nix run .\#init && ${terraform}/bin/terraform apply");
+            program = toString (pkgs.writers.writeBash "apply" "nix run .\#init && ${terraform}/bin/terraform apply \${1}");
           };
           # nix run ".#destroy"
           destroy = {
