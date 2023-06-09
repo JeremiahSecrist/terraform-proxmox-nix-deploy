@@ -24,7 +24,7 @@
           modules = [ 
             ./backend/postgres.nix
             ./provider/proxmox.nix
-            ./production
+            ./workspaces/production
             ];
         };
       in
