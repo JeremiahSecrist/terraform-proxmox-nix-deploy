@@ -23,7 +23,7 @@
           inherit system;
           modules = [ 
             ./backends/postgres.nix
-            ./provider/proxmox.nix
+            ./providers/proxmox.nix
             ./workspaces/production
             ];
         };
