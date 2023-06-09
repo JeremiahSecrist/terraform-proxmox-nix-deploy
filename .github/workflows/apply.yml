@@ -29,4 +29,4 @@ jobs:
       
     # Nix-specific logic begins here
     - name: Test the nix setup
-      run: source sourceme && nix run .\#apply
+      run: source sourceme && nix run .\#apply -- -auto-approve
