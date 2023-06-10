@@ -2,13 +2,13 @@ name: Terraform Plan
 # this pr should trigger ci cd
 on: 
   workflow_dispatch:
-  issue_comment:
+  pull_request_comment:
     types: [created]
   
 jobs:
   plan:
     name: plan
-    if: github.event.issue.pull_request_comment && contains(github.event.comment.body, '/plan')
+    if: contains(github.event.comment.body, '/plan')
     runs-on: ubuntu-22.04
     steps:
       - name: Get PR branch
@@ -17,6 +17,8 @@ jobs:
 
       - name: Git checkout
         uses: actions/checkout@v3
+        with:
+          ref: ${{ steps.comment-branch.outputs.head_ref }}
 
       - name: Tailscale
         uses: tailscale/github-action@v1
