@@ -1,21 +1,19 @@
-name: Terraform Plan
+name: Terraform Validate
 # this pr should trigger ci cd
 on: 
   workflow_dispatch:
-  issue_comment:
-    types: [created]
-  
+  pull_request_target:
+    types:
+      - opened
+    branches:
+      - 'main'
+
 jobs:
-  plan:
-    name: plan
-    if: github.event.issue.pull_request_comment && contains(github.event.comment.body, '/plan')
+  validate:
+    name: validate
     runs-on: ubuntu-22.04
     steps:
-      - name: Get PR branch
-        uses: xt0rted/pull-request-comment-branch@v1
-        id: comment-branch
-
-      - name: Git checkout
+      - name: git checkout
         uses: actions/checkout@v3
 
       - name: Tailscale
@@ -36,5 +34,5 @@ jobs:
           AGE_SECRET_KEY_FILE: ${{ secrets.AGE_SECRET_KEY_FILE }}
       
       # Nix-specific logic begins here
-      - name: Terraform plan
-        run: source sourceme && nix run .\#plan
+      - name: Validate terraform config
+        run: source sourceme && nix run .\#validate
