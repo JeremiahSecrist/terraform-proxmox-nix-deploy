@@ -1,19 +1,19 @@
 { ... }:
 {
 
-resource.proxmox_vm_qemu.newvm2 = {
+resource.proxmox_vm_qemu.demo = {
     
     # VM General Settings
     target_node = "pve1";
-    vmid = "102";
-    name = "newvm2";
+    vmid = "105";
+    name = "newvm3-d1c4f";
     desc = "Description";
 
     # VM Advanced General Settings
     onboot = true;
 
     # VM OS Settings
-    clone = "v0.0.0-23.05-b94c43a2ae1045bb57aca51f6bb164f9fc6f94d3";
+    clone = "v0.0.0-23.05-d1c4fdea62c9d63ba7d903c3f581acc6c88d732f";
 
     # VM System Settings
     agent = 1;
@@ -57,10 +57,10 @@ resource.proxmox_vm_qemu.newvm2 = {
     os_type = "cloud-init";
 
     # (Optional) IP Address and Gateway
-    ipconfig0 = "ip=10.0.0.20/24,gw=10.0.0.1";
+    ipconfig0 = "ip=10.0.0.5/24,gw=10.0.0.1";
     
     # (Optional) Default User
-    # ciuser = "your-username"
+     ciuser = "ops"
     
     # (Optional) Add your SSH KEY
      sshkeys = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJAGm66rJsr8vjRCYDkH4lEPncPq27o6BHzpmRmkzOiM";
