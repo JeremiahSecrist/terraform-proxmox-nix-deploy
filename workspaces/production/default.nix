@@ -63,9 +63,7 @@ resource.proxmox_vm_qemu.newvm = {
     # ciuser = "your-username"
     
     # (Optional) Add your SSH KEY
-    # sshkeys = <<EOF
-    # #YOUR-PUBLIC-SSH-KEY
-    # EOF
+     sshkeys = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJAGm66rJsr8vjRCYDkH4lEPncPq27o6BHzpmRmkzOiM";
 };
   
 }
