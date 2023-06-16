@@ -1,12 +1,12 @@
 { ... }:
 {
 
-resource.proxmox_vm_qemu.your-vm = {
+resource.proxmox_vm_qemu.newvm = {
     
     # VM General Settings
     target_node = "pve1";
     vmid = "101";
-    name = "vm-name";
+    name = "newvm";
     desc = "Description";
 
     # VM Advanced General Settings
@@ -32,26 +32,26 @@ resource.proxmox_vm_qemu.your-vm = {
         model  = "virtio";
     };
     
-    disk = {
-        backup       = 0;
-        cache        = "none";
-        file         = "vm-101-disk-0";
-        format       = "raw";
-        iothread     = 0;
-        mbps         = 0;
-        mbps_rd      = 0;
-        mbps_rd_max  = 0;
-        mbps_wr      = 0;
-        mbps_wr_max  = 0;
-        replicate    = 0;
-        size         = "3GB";
-        slot         = 0;
-        ssd          = 0;
-        storage      = "local-lvm";
-        # storage_type = "lvmthin";
-        type         = "virtio";
-        volume       = "local-lvm:vm-101-disk-0";
-    };
+    #disk = {
+    #    backup       = 0;
+    #    cache        = "none";
+    #    file         = "vm-101-disk-0";
+    #    format       = "raw";
+    #    iothread     = 0;
+    #    mbps         = 0;
+    #    mbps_rd      = 0;
+    #    mbps_rd_max  = 0;
+    #    mbps_wr      = 0;
+    #    mbps_wr_max  = 0;
+    #    replicate    = 0;
+    #    size         = "3GB";
+    #    slot         = 0;
+    #    ssd          = 0;
+    #    storage      = "local-lvm";
+    #    # storage_type = "lvmthin";
+    #    type         = "virtio";
+    #    volume       = "local-lvm:vm-101-disk-0";
+    #};
 
     # VM Cloud-Init Settings
     os_type = "cloud-init";
