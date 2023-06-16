@@ -57,7 +57,7 @@ resource.proxmox_vm_qemu.newvm = {
     os_type = "cloud-init";
 
     # (Optional) IP Address and Gateway
-    # ipconfig0 = "ip=0.0.0.0/0,gw=0.0.0.0"
+    ipconfig0 = "ip=10.0.0.20/24,gw=10.0.0.1";
     
     # (Optional) Default User
     # ciuser = "your-username"
