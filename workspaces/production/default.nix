@@ -13,7 +13,7 @@ resource.proxmox_vm_qemu.your-vm = {
     onboot = true;
 
     # VM OS Settings
-    clone = "nixos-22.11.20230516.6c591e7";
+    clone = "v0.0.0-23.05-fd88dc793254eab3036df022d360854419fc00c0";
 
     # VM System Settings
     agent = 1;
