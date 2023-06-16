@@ -60,7 +60,7 @@ resource.proxmox_vm_qemu.demo = {
     ipconfig0 = "ip=10.0.0.5/24,gw=10.0.0.1";
     
     # (Optional) Default User
-     ciuser = "ops"
+     ciuser = "ops";
     
     # (Optional) Add your SSH KEY
      sshkeys = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJAGm66rJsr8vjRCYDkH4lEPncPq27o6BHzpmRmkzOiM";
