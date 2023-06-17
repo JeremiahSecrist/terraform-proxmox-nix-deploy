@@ -31,6 +31,8 @@ resource.proxmox_vm_qemu.demo2 = {
         bridge = "vmbr0";
         model  = "virtio";
     };
+
+    boot = "order=scsi0;virtio0";
     
     # disk = {
     #     backup       = 0;
