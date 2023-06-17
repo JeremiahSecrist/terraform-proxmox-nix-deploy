@@ -5,7 +5,7 @@ resource.proxmox_vm_qemu.demo2 = {
     
     # VM General Settings
     target_node = "pve1";
-    vmid = "108";
+    vmid = "109";
     name = "demo2-d1c4f";
     desc = "Description";
 
@@ -32,28 +32,18 @@ resource.proxmox_vm_qemu.demo2 = {
         model  = "virtio";
     };
 
-    boot = "order=scsi0;virtio0";
+    disk = {
+    #   id           = 0;
+      type         = "virtio";
+      storage      = "local-lvm";
+    #   storage_type = "lvm";
+      size         = "4G";
+    #   backup       = true;
+    };
 
-    # disk = {
-    #     backup       = 0;
-    #     cache        = "none";
-    #     file         = "vm-101-disk-0";
-    #     format       = "raw";
-    #     iothread     = 0;
-    #     mbps         = 0;
-    #     mbps_rd      = 0;
-    #     mbps_rd_max  = 0;
-    #     mbps_wr      = 0;
-    #     mbps_wr_max  = 0;
-    #     replicate    = 0;
-    #     size         = "3000M";
-    #     slot         = 0;
-    #     ssd          = 0;
-    #     storage      = "local-lvm";
-    #     # storage_type = "lvmthin";
-    #     type         = "virtio";
-    #     volume       = "local-lvm:vm-101-disk-0";
-    # };
+    # boot = "order=scsi0;virtio0";
+    boot     = "cdn";
+    cloudinit_cdrom_storage = "local-lvm";
 
     # VM Cloud-Init Settings
     os_type = "cloud-init";
