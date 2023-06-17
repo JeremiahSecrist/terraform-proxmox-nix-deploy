@@ -43,7 +43,7 @@ resource.proxmox_vm_qemu.demo2 = {
 
     boot = "order=scsi0;virtio0";
     # boot     = "cdn";
-    # cloudinit_cdrom_storage = "local-lvm";
+    cloudinit_cdrom_storage = "local-lvm";
 
     # VM Cloud-Init Settings
     os_type = "cloud-init";
