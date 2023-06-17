@@ -5,7 +5,7 @@ resource.proxmox_vm_qemu.demo2 = {
     
     # VM General Settings
     target_node = "pve1";
-    vmid = "107";
+    vmid = "108";
     name = "demo2-d1c4f";
     desc = "Description";
 
@@ -33,7 +33,7 @@ resource.proxmox_vm_qemu.demo2 = {
     };
 
     boot = "order=scsi0;virtio0";
-    
+
     # disk = {
     #     backup       = 0;
     #     cache        = "none";
