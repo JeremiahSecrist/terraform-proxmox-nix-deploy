@@ -33,12 +33,12 @@ resource.proxmox_vm_qemu.demo2 = {
     };
 
     disk = {
-      id           = 0;
+    #   id           = 0;
       type         = "virtio";
       storage      = "local-lvm";
       storage_type = "lvm";
       size         = "4G";
-      backup       = true;
+    #   backup       = true;
     };
 
     # boot = "order=scsi0;virtio0";
