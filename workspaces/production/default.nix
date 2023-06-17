@@ -65,8 +65,7 @@ resource.proxmox_vm_qemu.demo2 = {
     # ciuser = "default";
     
     # (Optional) Add your SSH KEY
-     sshkeys = ''ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJAGciuserm66rJsr8vjRCYDkH4lEPncPq27o6BHzpmRmkzOiM
-     '';
+     sshkeys = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJAGciuserm66rJsr8vjRCYDkH4lEPncPq27o6BHzpmRmkzOiM";
 };
   
 }
