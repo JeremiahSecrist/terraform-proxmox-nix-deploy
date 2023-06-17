@@ -1,12 +1,12 @@
 { ... }:
 {
 
-resource.proxmox_vm_qemu.demo = {
+resource.proxmox_vm_qemu.demo2 = {
     
     # VM General Settings
     target_node = "pve1";
-    vmid = "105";
-    name = "newvm3-d1c4f";
+    vmid = "106";
+    name = "demo2-d1c4f";
     desc = "Description";
 
     # VM Advanced General Settings
@@ -58,12 +58,15 @@ resource.proxmox_vm_qemu.demo = {
 
     # (Optional) IP Address and Gateway
     ipconfig0 = "ip=10.0.0.5/24,gw=10.0.0.1";
-    
+
+    full_clone = true;
+
     # (Optional) Default User
-     ciuser = "ops";
+    # ciuser = "default";
     
     # (Optional) Add your SSH KEY
-     sshkeys = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJAGm66rJsr8vjRCYDkH4lEPncPq27o6BHzpmRmkzOiM";
+     sshkeys = ''ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJAGciuserm66rJsr8vjRCYDkH4lEPncPq27o6BHzpmRmkzOiM
+     '';
 };
   
 }
