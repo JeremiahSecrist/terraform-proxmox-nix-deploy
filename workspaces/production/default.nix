@@ -31,6 +31,8 @@ resource.proxmox_vm_qemu.demo2 = {
         bridge = "vmbr0";
         model  = "virtio";
     };
+
+    boot = "order=scsi0;virtio0";
     
     # disk = {
     #     backup       = 0;
@@ -57,7 +59,7 @@ resource.proxmox_vm_qemu.demo2 = {
     os_type = "cloud-init";
 
     # (Optional) IP Address and Gateway
-    ipconfig0 = "ip=10.0.0.5/24,gw=10.0.0.1";
+    ipconfig0 = "ip=10.0.0.4/24,gw=10.0.0.1";
 
     full_clone = true;
 
